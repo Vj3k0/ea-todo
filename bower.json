@@ -1,0 +1,27 @@
+{
+  "name": "ea-todo",
+  "description": "Simple TODO application built with Electron and AngularJS.",
+  "main": "main.js",
+  "authors": [
+    "Vjekoslav Ratkajec"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "electron",
+    "angular"
+  ],
+  "homepage": "https://github.com/Vj3k0/ea-todo",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-material": "~1.0.1"
+  }
+}

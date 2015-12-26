@@ -1,0 +1,26 @@
+{
+  "name": "ea-todo",
+  "version": "0.0.1",
+  "description": "Simple TODO application built with Electron and AngularJS.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vj3k0/ea-todo.git"
+  },
+  "keywords": [
+    "electron",
+    "angular"
+  ],
+  "author": "Vjekoslav Ratkajec",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vj3k0/ea-todo/issues"
+  },
+  "homepage": "https://github.com/Vj3k0/ea-todo#readme",
+  "dependencies": {
+    "electron-prebuilt": "^0.36.2"
+  }
+}
