@@ -41,7 +41,7 @@
 		<md-content class="content-container" layout="column" layout-align="center center">
 
 			<label class="todo-indicator" ng-class="todo.incompleteTasks.length ? 'todo-indicator-incomplete' : 'todo-indicator-complete'">{{ todo.incompleteTasks.length ? todo.incompleteTasks.length : "&#10004;" }}</label>
-			<label class="todo-message">{{ (todo.incompleteTasks.length ? "Hey chief, some items of utmost importance awaits your attention!" : "No stuff to do for now; you're either very efficient or lazy to add an item!") }}</label>
+			<label class="todo-message">{{ (todo.incompleteTasks.length ? "Hey chief, some items of utmost importance await your attention!" : "No stuff to do for now; you're either very efficient or lazy to add an item!") }}</label>
 
 			<!-- List incomplete tasks -->
 			<todo-list tasks="todo.incompleteTasks" refresh-tasks="todo.refreshTasks()"></todo-list>
