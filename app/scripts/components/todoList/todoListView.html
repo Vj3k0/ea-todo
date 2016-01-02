@@ -1,0 +1,11 @@
+<md-list>
+
+	<md-list-item ng-repeat="task in tasks">
+
+		<md-checkbox ng-model="task.completed" ng-change="refreshTasks()"></md-checkbox>
+		<p>{{task.text}}</p>
+
+	</md-list-item>
+
+
+</md-list>

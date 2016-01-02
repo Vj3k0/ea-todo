@@ -17,9 +17,9 @@ app.on('ready', function() {
 	// Other options available at:
 	// http://electron.atom.io/docs/latest/api/browser-window/#new-browserwindow-options
 	mainWindow = new BrowserWindow({
-		name: "",
-		width: "",
-		height: "",
+		name: "ea-todo",
+		width: 400,
+		height: 600,
 		toolbar: false
 	});
 

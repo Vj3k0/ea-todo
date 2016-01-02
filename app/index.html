@@ -1,9 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ea-todo</title>
+	<title>EA Todo</title>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+	<link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="styles/app.css">
+
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-material/angular-material.js"></script>
+
+	<script type="text/javascript" src="scripts/index.js"></script>
+	<script type="text/javascript" src="scripts/app/todoController.js"></script>
+	<script type="text/javascript" src="scripts/app/config.js"></script>
+	<script type="text/javascript" src="scripts/components/todoList/todoListDirective.js"></script>
+
 </head>
 <body>
+
+	<div ng-controller="TodoController as todo" layout="column">
+
+		<!-- Input tasks -->
+		<md-content md-theme="docs-dark">
+
+			<form ng-submit="todo.addTask()" layout="row" layout-align="center center" class="todo-form">
+
+				<md-input-container flex>
+					<label>Add new task</label>
+					<input ng-model="todo.inputTask">
+				</md-input-container>
+
+				<md-button class="md-icon-button md-primary" type="submit" aria-label="Add task">Add</md-button>
+
+			</form>
+
+		</md-content>
+
+		<md-content class="content-container" layout="column" layout-align="center center">
+
+			<label class="todo-indicator" ng-class="todo.incompleteTasks.length ? 'todo-indicator-incomplete' : 'todo-indicator-complete'">{{ todo.incompleteTasks.length ? todo.incompleteTasks.length : "&#10004;" }}</label>
+			<label class="todo-message">{{ (todo.incompleteTasks.length ? "Hey chief, some items of utmost importance awaits your attention!" : "No stuff to do for now; you're either very efficient or lazy to add an item!") }}</label>
+
+			<!-- List incomplete tasks -->
+			<todo-list tasks="todo.incompleteTasks" refresh-tasks="todo.refreshTasks()"></todo-list>
+
+			<!-- List completed tasks -->
+			<md-button ng-click="todo.toggleCompletedTasks()">{{ todo.showCompleted ? "Hide completed" : "Show completed" }}</md-button>
+			<todo-list tasks="todo.completedTasks" refresh-tasks="todo.refreshTasks()" ng-show="todo.showCompleted" class="ng-hide"></todo-list>
+
+		</md-content>
+
+
+	</div>
 
 </body>
 </html>
