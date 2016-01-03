@@ -38,8 +38,10 @@
 
 		</md-content>
 
+		<!-- Todo content -->
 		<md-content class="content-container" layout="column" layout-align="center center">
 
+			<!-- Indicator and status message -->
 			<label class="todo-indicator" ng-class="todo.incompleteTasks.length ? 'todo-indicator-incomplete' : 'todo-indicator-complete'">{{ todo.incompleteTasks.length ? todo.incompleteTasks.length : "&#10004;" }}</label>
 			<label class="todo-message">{{ (todo.incompleteTasks.length ? "Hey chief, some items of utmost importance await your attention!" : "No stuff to do for now; you're either very efficient or lazy to add an item!") }}</label>
 

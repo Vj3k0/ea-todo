@@ -6,6 +6,7 @@
 
 	function TodoController($scope) {
 
+		// List of bindable properties and methods
 		var todo = this;
 		todo.tasks = [];
 		todo.incompleteTasks = [];
@@ -18,6 +19,9 @@
 
 		activate();
 
+		/**
+		 * Initialize sample controller data.
+		 */
 		function activate() {
 			// Fill sample tasks
 			todo.tasks = [
@@ -29,6 +33,9 @@
 			refreshTasks();
 		}
 
+		/**
+		 * Run through all tasks and see which are complete and which are not.
+		 */
 		function refreshTasks() {
 			todo.completedTasks = [];
 			todo.incompleteTasks = [];
@@ -40,7 +47,11 @@
 			});
 		}
 
+		/**
+		 * Add new task to collection.
+		 */
 		function addTask() {
+			// Only add task if something actually exists
 			if (todo.inputTask) {
 				console.log("Adding task: " + todo.inputTask);
 				todo.tasks.push({ text: todo.inputTask, completed: false });
@@ -50,6 +61,9 @@
 			}
 		}
 
+		/**
+		 * Show or hide completed tasks.
+		 */
 		function toggleCompletedTasks() {
 			todo.showCompleted = !todo.showCompleted;
 		}
