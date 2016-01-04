@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Vj3k0/ea-todo#readme",
   "dependencies": {
-    "electron-prebuilt": "^0.36.2"
+    "electron-plugins": "0.0.4",
+    "electron-prebuilt": "^0.36.2",
+    "electron-updater": "^0.3.0"
   }
 }
