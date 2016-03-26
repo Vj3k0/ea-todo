@@ -1,18 +1,21 @@
 {
-    "name": "ea-todo",
-    "version": "0.0.1",
-    "identifier": "hr.creaticon.eatodo",
-    "description": "Simple TODO application built with Electron and AngularJS.",
-    "author": "Vjekoslav Ratkajec <vjeko@creaticon.hr>",
-    "main": "main.js",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Vj3k0/ea-todo/issues"
-    },
-    "homepage": "https://github.com/Vj3k0/ea-todo#readme",
-    "build": {
-        "app-bundle-id": "hr.creaticon.eatodo",
-        "app-category-type": "public.app-category.productivity",
-        "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
-    }
+  "name": "ea-todo",
+  "version": "0.0.1",
+  "identifier": "hr.creaticon.eatodo",
+  "description": "Simple TODO application built with Electron and AngularJS.",
+  "author": "Vjekoslav Ratkajec <vjeko@creaticon.hr>",
+  "main": "main.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vj3k0/ea-todo/issues"
+  },
+  "homepage": "https://github.com/Vj3k0/ea-todo#readme",
+  "build": {
+    "app-bundle-id": "hr.creaticon.eatodo",
+    "app-category-type": "public.app-category.productivity",
+    "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^0.1.4"
+  }
 }

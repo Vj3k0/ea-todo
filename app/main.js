@@ -1,3 +1,6 @@
+// Handle Squirrel events for Windows immediately on start
+if(require('electron-squirrel-startup')) return;
+
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
