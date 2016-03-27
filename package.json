@@ -1,5 +1,5 @@
 {
-  "name": "ea-todo",
+  "name": "eatodo",
   "version": "0.0.1",
   "description": "Simple TODO application built with Electron and AngularJS.",
   "scripts": {
