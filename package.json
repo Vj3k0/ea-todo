@@ -4,6 +4,8 @@
   "main": "app/main.js",
   "description": "Simple TODO application built with Electron and AngularJS.",
   "scripts": {
+    "start": "electron . --enable-logging",
+    "dev": "NODE_ENV='development' npm run start",
     "dist": "npm run dist:osx && npm run dist:win",
     "dist:osx": "build --platform darwin -d",
     "dist:win": "build --platform win32 -d"
