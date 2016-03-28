@@ -1,6 +1,7 @@
 {
   "name": "eatodo",
   "version": "0.0.1",
+  "main": "app/main.js",
   "description": "Simple TODO application built with Electron and AngularJS.",
   "scripts": {
     "dist": "npm run dist:osx && npm run dist:win",
