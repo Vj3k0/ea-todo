@@ -10,11 +10,6 @@
     "url": "https://github.com/Vj3k0/ea-todo/issues"
   },
   "homepage": "https://github.com/Vj3k0/ea-todo#readme",
-  "build": {
-    "app-bundle-id": "hr.creaticon.eatodo",
-    "app-category-type": "public.app-category.productivity",
-    "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
-  },
   "dependencies": {
     "electron-squirrel-startup": "^0.1.4"
   }
