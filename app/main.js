@@ -82,7 +82,7 @@ app.on('ready', function() {
     mainWindow.loadURL('file://' + __dirname + "/index.html");
 
     // Uncomment to use Chrome developer tools
-    mainWindow.webContents.openDevTools({detach:true});
+    // mainWindow.webContents.openDevTools({detach:true});
 
     // Cleanup when window is closed
     mainWindow.on('closed', function() {
