@@ -9,23 +9,10 @@
     "dist:win32": "build --platform win32 --arch ia32",
     "dist:win64": "build --platform win32 --arch x64"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vj3k0/ea-todo.git"
-  },
-  "keywords": [
-    "electron",
-    "angular"
-  ],
   "author": "Vjekoslav Ratkajec",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Vj3k0/ea-todo/issues"
-  },
-  "homepage": "https://github.com/Vj3k0/ea-todo#readme",
   "devDependencies": {
-    "electron-builder": "^3.1.2",
-    "electron-prebuilt": "^0.37.2"
+    "electron-builder": "^3.20.0",
+    "electron-prebuilt": "^1.0.2"
   },
   "build": {
     "app-bundle-id": "hr.creaticon.eatodo",

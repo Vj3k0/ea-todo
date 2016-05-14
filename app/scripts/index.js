@@ -6,8 +6,7 @@ function boot() {
 
 document.addEventListener('DOMContentLoaded', boot);
 
-const electron = require('electron');
-const ipcRenderer = electron.ipcRenderer;
+const {ipcRenderer} = require('electron');
 
 ipcRenderer.on('update-message', function(event, method) {
     console.log(method);

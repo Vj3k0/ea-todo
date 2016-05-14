@@ -2,11 +2,11 @@
 if(require('electron-squirrel-startup')) return;
 
 const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const {app} = electron;
+const {BrowserWindow} = electron;
+const {autoUpdater} = electron;
+const {ipcMain} = electron;
 const os = require('os');
-const autoUpdater = require('auto-updater');
-const ipcMain = electron.ipcMain;
 
 // Keep reference of main window because of GC
 var mainWindow = null;

@@ -4,6 +4,7 @@
   "description": "Simple TODO application built with Electron and AngularJS.",
   "author": "Vjekoslav Ratkajec <vjeko@creaticon.hr>",
   "main": "main.js",
+  "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^0.1.4"
   }
