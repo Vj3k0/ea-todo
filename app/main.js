@@ -21,7 +21,7 @@ if (!isDevelopment) {
         updateFeed = 'http://ea-todo.herokuapp.com/updates/latest'; 
     }
     else if (os.platform() === 'win32') {
-        updateFeed = 'http://eatodo.s3.amazonaws.com/updates/releases/win' + (os.arch() === 'x64' ? '64' : '32');
+        updateFeed = 'http://eatodo.s3.amazonaws.com/updates/latest/win' + (os.arch() === 'x64' ? '64' : '32');
     }
 
     autoUpdater.addListener("update-available", function(event) {
