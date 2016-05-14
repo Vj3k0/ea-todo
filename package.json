@@ -2,7 +2,7 @@
   "name": "eatodo",
   "description": "Simple TODO application built with Electron and AngularJS.",
   "scripts": {
-    "start": "electron ./app --enable-logging",
+    "start": "electron ./app --enable-logging --remote-debugging-port=9222",
     "dev": "NODE_ENV='development' npm run start",
     "dist": "npm run dist:osx && npm run dist:win32 && npm run dist:win64",
     "dist:osx": "build --platform darwin",
