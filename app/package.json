@@ -6,6 +6,10 @@
   "main": "main.js",
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^0.1.4"
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.0.8",
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
