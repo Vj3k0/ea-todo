@@ -19,12 +19,14 @@
     "release:win64": "cp -v dist/win-x64/{RELEASES,*.nupkg,*.exe} release/win64",
     "release": "npm run release:osx && npm run release:win32 && npm run release:win64",
     "deploy": "PACKAGE_VERSION=$(cat app/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && aws s3 sync release/ s3://eatodo/updates/$PACKAGE_VERSION/ --acl public-read && aws s3 sync s3://eatodo/updates/$PACKAGE_VERSION/ s3://eatodo/updates/latest/ --delete --acl public-read",
-    "all": "npm run dist && npm run release && npm run deploy"
+    "all": "npm run dist && npm run release && npm run deploy",
+    "reload": "live-reload app --port 35729"
   },
   "author": "Vjekoslav Ratkajec",
   "devDependencies": {
     "electron-builder": "^3.20.0",
-    "electron-prebuilt": "^1.0.2"
+    "electron-prebuilt": "^1.0.2",
+    "live-reload": "^1.1.0"
   },
   "build": {
     "app-bundle-id": "hr.creaticon.eatodo",
