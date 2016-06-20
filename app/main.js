@@ -8,6 +8,10 @@ const {autoUpdater} = electron;
 const {ipcMain} = electron;
 const os = require('os');
 
+const logger = require('winston');
+logger.level = 'debug';
+global.logger = logger;
+
 // Keep reference of main window because of GC
 var mainWindow = null;
 
@@ -25,31 +29,31 @@ if (!isDevelopment) {
     }
 
     autoUpdater.addListener("update-available", function(event) {
-        console.log("A new update is available")
+        logger.debug("A new update is available");
         if (mainWindow) {
             mainWindow.webContents.send('update-message', 'update-available');
         }
     });
     autoUpdater.addListener("update-downloaded", function(event, releaseNotes, releaseName, releaseDate, updateURL) {
-        console.log("A new update is ready to install", `Version ${releaseName} is downloaded and will be automatically installed on Quit`)
+        logger.debug("A new update is ready to install", `Version ${releaseName} is downloaded and will be automatically installed on Quit`);
         if (mainWindow) {
             mainWindow.webContents.send('update-message', 'update-downloaded');
         }
     });
     autoUpdater.addListener("error", function(error) {
-        console.log(error)
+        logger.error(error);
         if (mainWindow) {
             mainWindow.webContents.send('update-message', 'update-error');
         }
     });
     autoUpdater.addListener("checking-for-update", function(event) {
-        console.log("checking-for-update")
+        logger.debug("Checking for update");
         if (mainWindow) {
             mainWindow.webContents.send('update-message', 'checking-for-update');
         }
     });
     autoUpdater.addListener("update-not-available", function() {
-        console.log("update-not-available")
+        logger.debug("Update not available");
         if (mainWindow) {
             mainWindow.webContents.send('update-message', 'update-not-available');
         }
@@ -67,6 +71,8 @@ app.on('window-all-closed', function() {
 
 // When application is ready, create application window
 app.on('ready', function() {
+
+    logger.debug("Starting application");
 
     // Create main window
     // Other options available at:
@@ -91,7 +97,7 @@ app.on('ready', function() {
     
     if (!isDevelopment) {
         mainWindow.webContents.on('did-frame-finish-load', function() {
-            console.log("Checking for updates: " + feedURL);
+            logger.debug("Checking for updates: " + feedURL);
             autoUpdater.checkForUpdates();
         });
     }

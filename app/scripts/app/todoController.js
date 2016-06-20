@@ -2,9 +2,9 @@
 
 	angular
 		.module('app', ['ngMaterial', 'ngAnimate'])
-		.controller('TodoController', ['$scope', TodoController]);
+		.controller('TodoController', ['$scope', 'logger', TodoController]);
 
-	function TodoController($scope) {
+	function TodoController($scope, logger) {
 
 		// List of bindable properties and methods
 		var todo = this;
@@ -53,7 +53,7 @@
 		function addTask() {
 			// Only add task if something actually exists
 			if (todo.inputTask) {
-				console.log("Adding task: " + todo.inputTask);
+				logger.info("Adding task: " + todo.inputTask);
 				todo.tasks.push({ text: todo.inputTask, completed: false });
 				refreshTasks();
 				// Reset input to add new task

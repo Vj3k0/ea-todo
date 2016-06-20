@@ -46,5 +46,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "winston": "^2.2.0"
   }
 }
