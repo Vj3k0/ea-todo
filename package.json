@@ -52,8 +52,5 @@
     "win": {
       "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
     }
-  },
-  "dependencies": {
-    "winston": "^2.2.0"
   }
 }
