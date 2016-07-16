@@ -1,6 +1,6 @@
 {
   "name": "eatodo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple TODO application built with Electron and AngularJS.",
   "author": "Vjekoslav Ratkajec <vjeko@creaticon.hr>",
   "main": "main.js",
