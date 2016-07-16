@@ -5,9 +5,9 @@
     "postinstall": "install-app-deps",
     "start": "electron ./app --enable-logging --remote-debugging-port=9222",
     "dev": "NODE_ENV='development' npm run start",
-    "dist": "build -owl --x64 && build -wl --ia32",
+    "dist": "build -mwl --x64 --ia32",
     "prerelease:osx": "rimraf release/osx && mkdirp release/osx",
-    "release:osx": "copyfiles -f dist/osx/*.{dmg,zip} release/osx && PACKAGE_VERSION=$(cat app/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && echo $PACKAGE_VERSION >> ./release/osx/VERSION",
+    "release:osx": "copyfiles -f dist/mac/*.{dmg,zip} release/osx && PACKAGE_VERSION=$(cat app/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && echo $PACKAGE_VERSION >> ./release/osx/VERSION",
     "prerelease:win32": "rimraf release/win32 && mkdirp release/win32",
     "release:win32": "copyfiles -f dist/win-ia32/{RELEASES,*.nupkg,*.exe} release/win32",
     "prerelease:win64": "rimraf release/win64 && mkdirp release/win64",
@@ -19,19 +19,18 @@
   },
   "author": "Vjekoslav Ratkajec",
   "devDependencies": {
-    "copyfiles": "^0.2.1",
-    "electron-builder": "^4.2.2",
-    "electron-prebuilt": "^1.0.2",
-    "live-reload": "^1.1.0",
-    "mkdirp": "^0.5.1",
-    "npm-run-all": "^2.3.0",
-    "rimraf": "^2.5.2"
+    "copyfiles": "~1.0.0",
+    "electron-builder": "5.12.X",
+    "electron-prebuilt": "~1.2.X",
+    "live-reload": "~1.1.0",
+    "mkdirp": "~0.5.1",
+    "npm-run-all": "~2.3.0",
+    "rimraf": "~2.5.3"
   },
   "build": {
-    "app-bundle-id": "hr.creaticon.eatodo",
+    "appId": "hr.creaticon.eatodo",
     "app-category-type": "public.app-category.productivity",
-    "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico",
-    "osx": {
+    "dmg": {
       "title": "EA Todo",
       "background": "build/background.png",
       "icon": "build/icon.icns",
@@ -49,6 +48,9 @@
           "type": "file"
         }
       ]
+    },
+    "win": {
+      "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
     }
   },
   "dependencies": {
